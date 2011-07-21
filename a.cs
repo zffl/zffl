@@ -1,0 +1,6 @@
+using System;
+
+int Main(){
+
+
+}
