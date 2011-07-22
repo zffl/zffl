@@ -1,3 +1,3 @@
 import os
 
-print os.version
+print os.version1
