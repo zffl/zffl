@@ -1,3 +1,4 @@
 import os
 
-print os.version1
+print os.verion1
+print error
