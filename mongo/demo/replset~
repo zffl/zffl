@@ -1,0 +1,13 @@
+mongod --replSet testSet --noprealloc --smallfiles --rest --port 31000 --dbpath /data/db/testSet-0 --oplogSize 2
+mongod --replSet testSet --noprealloc --smallfiles --rest --port 31001 --dbpath /data/db/testSet-1 --oplogSize 2
+mongod --replSet testSet --noprealloc --smallfiles --rest --port 31002 --dbpath /data/db/testSet-2 --oplogSize 2
+
+config = {_id: 'foo', members: [
+                          {_id: 0, host: 'localhost:31000'},
+                          {_id: 1, host: 'localhost:31001'},
+                          {_id: 2, host: 'localhost:31002'}]
+           }
+
+rs.initiate(config);
+
+rs.status()
